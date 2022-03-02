@@ -18,8 +18,10 @@ import { Navbar, Nav, Container } from 'react-bootstrap'
 function App() {
 
   // state
-  const [ email, setEmail ] = useState("admin");
-  const [ pass, setPass ] = useState("12345");
+  const [ email ] = useState("admin@gmail.com");
+  const [ pass ] = useState("12345");
+  const [ inputedEmail, setInputedEmail ] = useState("");
+  const [ inputedPass, setInputedPass ] = useState("");
 
   return (
     <div className="App">
@@ -28,7 +30,7 @@ function App() {
         <header>
           <Navbar bg="light" expand="lg">
             <Container>
-              <Navbar.Brand href="#home">Simple React Auth</Navbar.Brand>
+              <Link className="navbar-brand" to="/">Simple React Auth</Link>
 
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
@@ -51,7 +53,7 @@ function App() {
             <Route path="/" exact element={ <Dashboard /> } />
 
             {/* check auth */}
-            <Route path="/*" element={ <PrivateOutlet /> }>
+            <Route path="/*" element={ <PrivateOutlet email={email} pass={pass} inputedEmail={inputedEmail} inputedPass={inputedPass} /> }>
               {/* settings */}
               <Route path="settings" element={ <Settings /> } />
 
@@ -60,7 +62,7 @@ function App() {
             </Route>
 
             {/* login */}
-            <Route path="/login" element={ <Login /> } />
+            <Route path="/login" element={ <Login inputedEmail={inputedEmail} inputedPass={inputedPass} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
 
           </Routes>
         {/* body end */}
