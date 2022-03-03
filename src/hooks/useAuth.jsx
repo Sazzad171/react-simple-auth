@@ -1,10 +1,8 @@
-export default function useAuth( {email, pass, inputedEmail, inputedPass }) {
-
-  let auth = false;
+export default function useAuth( {email, pass, inputedEmail, inputedPass, authCheck, setAuthCheck }) {
 
   if( email === inputedEmail && pass === inputedPass ) {
-    auth = true;
+    setAuthCheck(true);
   }
 
-  return auth;
+  return authCheck;
 }
