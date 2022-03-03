@@ -13,7 +13,7 @@ import Settings from "./components/Settings";
 import Profile from "./components/Profile";
 import PrivateOutlet from "./components/PrivateOutlet";
 
-import { Navbar, Nav, Container } from 'react-bootstrap'
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function App() {
 
@@ -66,6 +66,11 @@ function App() {
 
           </Routes>
         {/* body end */}
+
+        {/* logout show/hide */}
+        {
+          
+        }
 
       </BrowserRouter>
     </div>
