@@ -69,7 +69,7 @@ function App() {
             <Route path="/login" element={ <Login inputedEmail={inputedEmail} inputedPass={inputedPass} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
 
             {/* logout */}
-            <Route path="/logout" element={ <Logout setAuthCheck={setAuthCheck} /> } />
+            <Route path="/logout" element={ <Logout setAuthCheck={setAuthCheck} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
 
           </Routes>
         {/* body end */}
