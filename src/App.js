@@ -63,13 +63,13 @@ function App() {
 
               {/* profile */}
               <Route path="profile" element={ <Profile /> } />
+
+              {/* logout */}
+              <Route path="logout" element={ <Logout setAuthCheck={setAuthCheck} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
             </Route>
 
             {/* login */}
             <Route path="/login" element={ <Login inputedEmail={inputedEmail} inputedPass={inputedPass} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
-
-            {/* logout */}
-            <Route path="/logout" element={ <Logout setAuthCheck={setAuthCheck} setInputedEmail={setInputedEmail} setInputedPass={setInputedPass} /> } />
 
           </Routes>
         {/* body end */}
